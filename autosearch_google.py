@@ -2,8 +2,11 @@ import time
 
 import pyautogui as pag
 
-time.sleep(3)
+time.sleep(2)
 print(pag.position())
+pag.moveTo(8,767)
+time.sleep(1)
+
 # click browser
 pag.click(329,743)
 time.sleep(2)
