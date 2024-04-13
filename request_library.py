@@ -1,5 +1,6 @@
 # RealPython.com
 import requests
+from requests.exceptions import Timeout
 
 response=requests.get('https://api.github.com')
 print(response.json())
@@ -46,3 +47,14 @@ print("Total_repositories_javascript",json_response1['total_count'])
 diff=(json_response1['total_count']-json_response['total_count'])*100/json_response['total_count']
 # get the diff
 print(f'Github repos JS and python count= {diff:.2f}%')
+
+
+# time out
+# request establishes a connection within 3.05 seconds and receives data within 5 seconds of the connection being established,
+try:
+    response = requests.get("https://api.github.com", timeout=3.5)
+except Timeout:
+    print("The request timed out")
+    print(TimeoutError.strerror)
+else:
+    print("The request did not time out")
