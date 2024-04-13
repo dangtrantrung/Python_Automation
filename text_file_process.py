@@ -19,6 +19,13 @@ print(os.getcwd())
 # read,write file utf-8
 filename="file4.txt"
 f=open(filename,"a",encoding='utf-8')
-line="anh trùng đẹp trai"
+line="anh trùng 1 đẹp trai"
 f.write(line +'\n')
 f.close()
+
+read_f=open(filename,mode='r',encoding='utf-8')
+list_lines=read_f.readlines()
+print(list_lines)
+for line in list_lines:
+    print(line)
+read_f.close()
