@@ -13,7 +13,7 @@ class Vector:
     # def pr():
     #     print(f'X: {self.X}, Y: {self.Y}')
     def __call__(self):
-        print(f"Hello! I  am {self.__name__}, Iwas called")
+        print(f"Hello! I was called")
     def __len__(self):
         return 10
 
