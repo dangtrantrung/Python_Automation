@@ -53,7 +53,7 @@ print(f'Github repos JS and python count= {diff:.2f}%')
 # request establishes a connection within 3.05 seconds and receives data within 5 seconds of the connection being established,
 try:
     response = requests.get("https://api.github.com", timeout=3.5)
-except Timeout:
+except TimeoutError:
     print("The request timed out")
     print(TimeoutError.strerror)
 else:
