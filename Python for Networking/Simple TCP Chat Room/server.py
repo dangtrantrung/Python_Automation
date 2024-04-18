@@ -29,7 +29,7 @@ def handle(client):
 def receive():
     while True:
         client,address=server.accept()
-        print(f'Connectted with {str(address)}')
+        print(f'Connected with address: {str(address)}')
         client.send('NICK'.encode('ascii'))
         nickname=client.recv(1024).decode('ascii')
         nicknames.append(nickname)
