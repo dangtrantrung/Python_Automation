@@ -23,6 +23,7 @@ def write():
     while True:
         message=f'{nickname}: {input("")}'
         client.send(message.encode('ascii'))
+
 receive_thread=threading.Thread(target=receive)
 receive_thread.start()
 
