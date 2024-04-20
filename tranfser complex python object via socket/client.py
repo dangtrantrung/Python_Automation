@@ -22,13 +22,12 @@ client.connect(('127.0.0.1',9998))
 print('Client connected to server')
 
 try:
-    #myobject={'key1':'value1','key2':'value2'}
-    # serialized=pickle.dumps(myobject)
+    myobject={'model':model,'report':report.encode('ascii')}
+    serialized=pickle.dumps(myobject)
     # serialized=pickle.dumps(model)
-    serialized1=pickle.dumps(report.encode('ascii'))
-    # client.sendall(serialized)
-    client.sendall(serialized1)
-    print('client.sendall(report)')
+    client.sendall(serialized)
+
+    print('client.sendall(model+report)')
 
 finally:
     client.close()

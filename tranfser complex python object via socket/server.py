@@ -20,9 +20,11 @@ while True:
             if not chunk:
                 break
             data+=chunk
-        received_object=pickle.loads(data).decode('ascii')
+        received_object=pickle.loads(data)
 
-        print(f'Received: {received_object}')
-        # print(f'Client Trained Model Accuracy: {received_object.score(X,y)}')
+        model= received_object['model']
+        report= received_object['report'].decode('ascii')
+        print(f'Client Trained Model Accuracy: {model.score(X,y)}')
+        print(f'Client Trained Model - Classification Report: {report}')
     finally:
         client.close()
